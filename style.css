@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  margin: 0;
+}
+h1 {
+  text-align: center;
+}
+.newtask {
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}
+.newtask .tasktitle {
+  position: relative;
+  width: 75%;
+  height: 70px;
+}
+.newtask .tasktitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  transition: .3s;
+  background-color: #0984e3;
+}
+.newtask .tasktitle.fill::after {
+  width: 100%;
+}
+.newtask .tasktitle #tasktitle {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  font-size: 1.5em;
+  color: #636e72;
+  border: none;
+  border-bottom: 1px solid #b2bec3;
+  outline: none;
+  cursor: pointer;
+}
+.newtask .tasktitle #tasktitle:focus {
+  cursor: text;
+}
+.newtask .tasktitle #tasktitle::placeholder {
+  transition: .15s;
+  color: #b2bec3;
+}
+.newtask .tasktitle #tasktitle:focus::placeholder {
+  opacity: 0;
+}
+.newtask #addtask {
+  width: 70px;
+  height: 70px;
+  margin-left: 20px;
+  background-color: #fefefe;
+  border: 1px solid #0984e330;
+  color: #0984e3;
+  border-radius: 8px;
+  font-size: 3em;
+  font-family: fantasy;
+  font-weight: bold;
+  transition: .2s;
+  cursor: pointer;
+}
+.newtask #addtask:hover {
+  border-color: #0984e390;
+}
+.newtask #addtask.disabled {
+  border: 1px solid#636e7230;
+  color: #636e72;
+  cursor: default;
+}
+hr {
+  width: calc(70% + 90px);
+  opacity: .3;
+  margin: 64px auto;
+}
+.tasks {
+  width: calc(70% + 90px);
+  margin: auto;
+}
+.count {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.task {
+  overflow: hidden;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size: 2em;
+  height: 86px;
+  line-height: 43px;
+  margin-bottom: 10px;
+}
+.task .title {
+  float: left;
+}
+.task .remove, .task .done {
+  float: right;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+}
+.task .remove {
+  color: #d63031;
+}
+.task .done {
+  margin-right: 20px;
+  color: #00b894;
+}
+.task.done .title {
+  color:#b2bec3;
+  text-decoration: line-through;
+}
+.task.done .done {display: none}
